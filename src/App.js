@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import React, { useState } from "react";
+import DisplayBox from "./components/DisplayBox";
+import Box from "./components/Box";
+const appStyle = {
+  width: "70%",
+  margin: "50px auto",
+  textAlign: "center",
+};
 function App() {
+  const [boxArr, setBoxArr] = useState([]);
+
+  console.log(boxArr, " this is boxArr");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={appStyle}>
+      <Box boxArr={boxArr} setBoxArr={setBoxArr} />
+      <DisplayBox boxArr={boxArr} />
     </div>
   );
 }
